@@ -46,3 +46,12 @@ body{
 .navbar-dark {
      background-color: #512DA8;
 }
+
+label{
+	padding-top: 0px;
+	vertical-align: middle;
+}
+
+input{
+	vertical-align: middle;
+}
