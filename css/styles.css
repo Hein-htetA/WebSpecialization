@@ -55,3 +55,7 @@ label{
 input{
 	vertical-align: middle;
 }
+
+.badge {
+	margin-left: 10px;
+}
