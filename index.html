@@ -209,9 +209,6 @@
                         <button class="btn btn-danger btn-sm" id="carousel-pause">
                             <span class="fa fa-pause"></span>
                         </button>
-                        <button class="btn btn-danger btn-sm" id="carousel-play">
-                            <span class="fa fa-play"></span>
-                        </button>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
@@ -383,11 +380,17 @@
     <script>
         $(document).ready(function(){
             $("#mycarousel").carousel( { interval: 2000 } );
-            $("#carousel-pause").click(function(){
-                $("#mycarousel").carousel('pause');
-            });
-            $("#carousel-play").click(function(){
-                $("#mycarousel").carousel('cycle');
+            $("#carouselButton").click(function(){
+                if ($("#carouselButton").find("span").hasClass('fa-pause')) {
+                    $("#mycarousel").carousel('pause');
+                    $("#carouselButton").find("span").removeClass('fa-pause');
+                    $("#carouselButton").find("span").addClass('fa-play');
+                }
+                else if ($("#carouselButton").find("span").hasClass('fa-play')){
+                    $("#mycarousel").carousel('cycle');
+                    $("#carouselButton").find("span").removeClass('fa-play');
+                    $("#carouselButton").find("span").addClass('fa-pause');                    
+                }
             });
         });
     </script>
